@@ -8,7 +8,7 @@ config.js
 #FolderName/
 etl_process/resources/
 
-raw_DBs/
+resources/raw_DBs/
 
 #ignore_FUll_DB
 db/deaths_inegi.sqlite
