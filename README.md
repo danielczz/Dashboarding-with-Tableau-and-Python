@@ -1,4 +1,4 @@
-# Dashboarding citibike data insights powered by Tableau and Python
+# Citibike data insights powered by Tableau and Python
 Dashboarding repository for citibike analysis in the metropolitan New York City area for the last years.
 
 ![Landing page](Resources/Images/anthony-ginsbrook-208979-unsplash.jpg)
