@@ -1,169 +1,65 @@
 # Citibike data insights powered by Tableau and Python
 Dashboarding repository for citibike analysis in the metropolitan New York City area for the last years.
 
-![Landing page](Resources/Images/anthony-ginsbrook-208979-unsplash.jpg)
-
 ## Authors
 Daniel Cespedes - [LinkedIn](https://www.linkedin.com/in/selinzorob/) - [GitHub](https://github.com/danielczz)
 
-
 ## Project Outline
 
-<img src="./Resources/Images/nasa-43569-unsplash.jpg" width="250" height="250" align="right"> 
+<img src="./Resources/Images/nasa-43569-unsplash.jpg" align="center">
 
-In this project we are going to analyze data generated for the **Earthquakes detected around the world for the last Week**. The data is provided on real time by _USGS - United States Geological Survey_. 
+This project is the perfect enabler for **overseeing the largest bike sharing program in the United States**. In this repository you will find all you need to generate regular reports for city officials looking to publicize and improve the city program decision making.
 
-You can review the info on the following link: [USGS GeoJSON Feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
+Since 2013, the Citi Bike Program has implemented a robust infrastructure for collecting data on the program's utilization. That is the data that we are going to use for data analysis purposes. 
 
-We will provide useful actionable insigths about the Earthquakes and his locations around the world in order to have a better visualization and decision making process.
-
-
-Your task in this assignment is to aggregate the data found in the Citi Bike Trip History Logs to build a data dashboard, story, or report.  You may work with a timespan of your choosing. Optionally, you may merge multiple datasets from different periods. The following are some questions you may wish to tackle, especially if you are working with merged datasets. Do not limit yourself to these questions; they are suggestions for a starting point. Be creative!
+The data is provided on real time and available online.
 
 
-How many trips have been recorded total during the chosen period?
+### **Technology landscape**
 
+1. Python, to provide data analysis: 
+[_Python_](https://www.python.org/)
 
-By what percentage has total ridership grown?
+1. Pandas, to provide data analysis on Python: 
+[_Pandas_](https://pandas.pydata.org/)
 
-
-How has the proportion of short-term customers and annual subscribers changed?
-
-
-What are the peak hours in which bikes are used during summer months?
-
-
-
-e New York Citi Bike Program, you are now responsible for overseeing the largest bike sharing program in the United States. In your new role, you will be expected to generate regular reports for city officials looking to publicize and improve the city program.
-Since 2013, the Citi Bike Program has implemented a robust infrastructure for collecting data on the program's utilization. Through the team's efforts, each month bike data is collected, organized, and made public on the Citi Bike Data webpage.
-However, while the data has been regularly updated, the team has yet to implement a dashboard or sophisticated reporting process. City officials have a number of questions on the program, so your first task on the job is to build a set of data reports to provide the answers.
-
-
-
-
-
-## Technology Landscape
-
-1. JavaScript, one of the core technologies of the World Wide Web.
-[_JavaScript_](https://www.javascript.com/)
-
-1. HTML - _Hypertext Markup Language_ is the standard markup language for creating web pages and web applications.
-[_HTML_](https://www.w3.org/html/)
-
-1. D3.js - _Data Driven Document for JavaScript_ is a JavaScript library for producing dynamic, interactive data visualizations in web browsers.
-[_D3.js_](https://d3js.org/)
-
-1. Leaflet - Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps.
-[_Leaflet_](https://leafletjs.com/)
-
-1. DOM - _The Document Object Model_ is an application programming interface (API) for HTML and XML documents.
-[_DOM_](https://www.w3.org/TR/DOM-Level-1/introduction.html)
-
+1. Tableau, can help anyone see and understand their data. Connect to almost any database, drag and drop to create visualizations, and share with a click: 
+[_Tableau_](https://www.tableau.com/)
 
 
 ## Data Analysis Framework
 
 ### **Data gathering**
-- Data provided for the analysis on JSON representation from USGS:
+<img src="./Resources/Images/anthony-ginsbrook-208979-unsplash.jpg" width="250" height="150" align="right">
 
-![Landing page](static/images/JSON.png)
+You can review the data on the following link: [City Bike NYC System Data](https://www.citibikenyc.com/system-data)
 
-
+<br><br><br>
 
 ### **Data analysis**
 
-This is a brief sample extraction of the JavaScript code. Find the complete code available here: [_logic.js_](static/js/logic.js)
+Our task in this assignment is to aggregate the data found in the Citi Bike Trip History Logs to build a data dashboard, story, or report.
 
-- Retrieve JSON representation data: 
+- [Main script in Jupyter Notebook](https://www.citibikenyc.com/system-data)
 
+- [Main reports in Tableau Workbook](https://www.citibikenyc.com/system-data)
 
+- [Main screencaptures in Tableau](https://www.citibikenyc.com/system-data)
 
-```JS
-// All Week
-var queryUrl_EQ = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
-
-// All Month
-// var queryUrl_EQ = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson";
-
-
-d3.json(queryUrl_EQ, function(data) {
-  // Once we get a response, send the data.features object to the createFeatures function
-  createFeatures(data.features);
-});
-```
-
-- Fetch JSON data and create visualizations: 
-
-```JS
-function createFeatures(earthquakeData) {
-
-  // Define a function we want to run once for each feature in the features array
-  // Give each feature a popup describing the place and time of the earthquake
-  function onEachFeature(feature, layer) {
-
-    layer.bindPopup(
-      "<h3>" + "Location: " + feature.properties.place +
-      "</h3><hr><p>" + "Time: " + new Date(feature.properties.time) +
-      "</h3><p>" + "Magnitude: " + feature.properties.mag + "</p>");
-
-  }
-
-  // Create a GeoJSON layer containing the features array on the earthquakeData object
-  // Run the onEachFeature function once for each piece of data in the array
-  var earthquakes = L.geoJSON(earthquakeData, {
-    onEachFeature: onEachFeature,
-    pointToLayer: function (feature, layer_circle) {
-      var Markers_EQ = {
-        radius: 5 * feature.properties.mag,
-        fillColor: getColor(feature.properties.mag),
-        weight: 1,
-        fillOpacity: 0.90
-      };
-      return L.circleMarker(layer_circle, Markers_EQ)
-    }
-  });
-
-  console.log(earthquakes);
-
-  // Sending our earthquakes layer to the createMap function
-  createMap(earthquakes);
-}
-```
-
-- Create a portal to geo-isualize Earthquake data by magnitude for last Week: 
-```JS
-function createMap(earthquakes) {
-
-  // Define streetmap and darkmap layers
-  var streetmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-    maxZoom: 18,
-    id: "mapbox.streets",
-    accessToken: API_KEY
-  });
-
-  var darkmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-    maxZoom: 18,
-    id: "mapbox.dark",
-    accessToken: API_KEY
-  });
-
-  // Define a baseMaps object to hold our base layers
-  var baseMaps = {
-    "Street Map": streetmap,
-    "Dark Map": darkmap
-  };
-
-  // Create overlay object to hold our overlay layer
-  var overlayMaps = {
-    "Earthquakes by magnitude": earthquakes
-  };
-```
 
 ### **Data sharing**
-### Screencapture of the final application:
 
-This is a screen-capture and you can find the file here: rief sample extraction of the JavaScript code. Find the complete code available here: [_Screen-capture final application_](static/images/screen.png)
-
-![Screencapture](static/images/screen.png)
+### Screencaptures of the final Tableau Dashboard:
+![Landing page](Resources/Images/Output/0.png)
+![Landing page](Resources/Images/Output/1.png)
+![Landing page](Resources/Images/Output/2.png)
+![Landing page](Resources/Images/Output/3.png)
+![Landing page](Resources/Images/Output/4.png)
+![Landing page](Resources/Images/Output/5.png)
+![Landing page](Resources/Images/Output/6.png)
+![Landing page](Resources/Images/Output/7.png)
+![Landing page](Resources/Images/Output/8.png)
+![Landing page](Resources/Images/Output/9.png)
+![Landing page](Resources/Images/Output/10.png)
+![Landing page](Resources/Images/Output/11.png)
+![Landing page](Resources/Images/Output/12.png)
