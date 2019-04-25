@@ -4,16 +4,42 @@ Dashboarding repository for citibike analysis in the metropolitan New York City 
 ![Landing page](Resources/Images/anthony-ginsbrook-208979-unsplash.jpg)
 
 ## Authors
-* Daniel Cespedes - [LinkedIn](https://www.linkedin.com/in/selinzorob/) - [GitHub](https://github.com/danielczz)
+Daniel Cespedes - [LinkedIn](https://www.linkedin.com/in/selinzorob/) - [GitHub](https://github.com/danielczz)
 
 
 ## Project Outline
+
+<img src="./Resources/Images/nasa-43569-unsplash.jpg" width="250" height="250" align="right"> 
 
 In this project we are going to analyze data generated for the **Earthquakes detected around the world for the last Week**. The data is provided on real time by _USGS - United States Geological Survey_. 
 
 You can review the info on the following link: [USGS GeoJSON Feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
 
 We will provide useful actionable insigths about the Earthquakes and his locations around the world in order to have a better visualization and decision making process.
+
+
+Your task in this assignment is to aggregate the data found in the Citi Bike Trip History Logs to build a data dashboard, story, or report.  You may work with a timespan of your choosing. Optionally, you may merge multiple datasets from different periods. The following are some questions you may wish to tackle, especially if you are working with merged datasets. Do not limit yourself to these questions; they are suggestions for a starting point. Be creative!
+
+
+How many trips have been recorded total during the chosen period?
+
+
+By what percentage has total ridership grown?
+
+
+How has the proportion of short-term customers and annual subscribers changed?
+
+
+What are the peak hours in which bikes are used during summer months?
+
+
+
+e New York Citi Bike Program, you are now responsible for overseeing the largest bike sharing program in the United States. In your new role, you will be expected to generate regular reports for city officials looking to publicize and improve the city program.
+Since 2013, the Citi Bike Program has implemented a robust infrastructure for collecting data on the program's utilization. Through the team's efforts, each month bike data is collected, organized, and made public on the Citi Bike Data webpage.
+However, while the data has been regularly updated, the team has yet to implement a dashboard or sophisticated reporting process. City officials have a number of questions on the program, so your first task on the job is to build a set of data reports to provide the answers.
+
+
+
 
 
 ## Technology Landscape
