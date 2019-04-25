@@ -40,12 +40,11 @@ You can review the data on the following link: [City Bike NYC System Data](https
 
 Our task in this assignment is to aggregate the data found in the Citi Bike Trip History Logs to build a data dashboard, story, or report.
 
-- [Main script in Jupyter Notebook](https://www.citibikenyc.com/system-data)
+- [Main script in Jupyter Notebook](https://github.com/danielczz/Dashboarding-with-Tableau-and-Python/blob/master/Resources/Data%20Engineer/Main_script_Jupyter_Notebook.ipynb)
 
-- [Main reports in Tableau Workbook](https://www.citibikenyc.com/system-data)
+- [Main reports in Tableau Workbook](https://github.com/danielczz/Dashboarding-with-Tableau-and-Python/blob/master/Resources/Dashboard/CityBike_analysis_powered_by_Tableau.twb)
 
-- [Main screencaptures in Tableau](https://www.citibikenyc.com/system-data)
-
+- [Main screencaptures from Tableau](https://github.com/danielczz/Dashboarding-with-Tableau-and-Python/tree/master/Resources/Images/Output)
 
 ### **Data sharing**
 
