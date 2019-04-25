@@ -12,7 +12,7 @@ This project is the perfect enabler for **overseeing the largest bike sharing pr
 
 Since 2013, the Citi Bike Program has implemented a robust infrastructure for collecting data on the program's utilization. That is the data that we are going to use for data analysis purposes. 
 
-The data is provided on real time and available online.
+The open data is provided and available online.
 
 
 ### **Technology landscape**
